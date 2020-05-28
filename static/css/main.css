@@ -1,0 +1,16 @@
+head{
+    margin: 0;
+    font-family: serif;
+    font-size: small ;
+    color: red;
+   
+}
+
+/*Unsure about margin in head or body, seems to not change anything.*/
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: large; 
+    color: blue;
+}

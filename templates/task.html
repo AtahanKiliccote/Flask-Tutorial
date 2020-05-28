@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% block title %} View All Tasks {%endblock%}
+
+{%block content%}
+    {%with messages = get_flashed_messages()%}
+        {%if messages%}
+            {%for msg in messages%}
+                <p>{{msg}}</p>
+            {%endfor%}
+        {%endif%}
+    {%endwith%}
+    <form action="#" method="post">
+        <p>Task:</p>
+        <p><input type="text" name="tk" /></p>
+        <p>Length:</p>
+        <p><input type="text" name="len" /></p>
+        <p><input type="submit" value="submit" /></p>
+    </form>
+
+    <form action="{{ url_for('delete') }}">
+        <input type="submit" value="Delete Recent Task" >
+    </form>
+
+    {% for item in values%}
+        <p>Task: {{item.t_tsk}}, Length: {{item.t_length}}, Date: {{item.t_date}}</p>
+
+    {%endfor%}
+
+    {%endblock%}
+
+    </head>
+<body>
+    {% block body %} {% endblock %}
+</body>
+
+
+</html>
